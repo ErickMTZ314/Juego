@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3ybc3w73av60"]
+
+[ext_resource type="PackedScene" uid="uid://bsborx3vm0y54" path="res://Splash_screen/godot_splash.tscn" id="2_k3bkt"]
+[ext_resource type="PackedScene" uid="uid://y3j3s6p2mkyq" path="res://menu/inicio/menu_inicio.tscn" id="2_m2i7k"]
+[ext_resource type="PackedScene" uid="uid://k4lui212phf6" path="res://Splash_screen/equipo_splash.tscn" id="3_i4a8r"]
+
+[sub_resource type="GDScript" id="GDScript_k3bkt"]
+script/source = "extends Control
+
+@export var _move_to: PackedScene
+@export var _initial_delay: float = 1
+
+var _Splash_screens: Array[Splashscreen] = []
+
+@onready var _Splash_screen_container: CenterContainer = $Splashscreencontainer
+
+func _ready() -> void:
+	assert(_move_to)
+	
+	set_process_input(false)
+	
+	for Splash_screen in _Splash_screen_container.get_children():
+		Splash_screen.hide()
+		_Splash_screens.push_back(Splash_screen)
+	await get_tree().create_timer(_initial_delay).timeout
+	_start_splash_screen()
+	set_process_input(true)
+	
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed(\"salir\"):
+		_skip()
+		
+func _start_splash_screen() -> void:
+	if  _Splash_screens.size() == 0:
+		get_tree().change_scene_to_packed(_move_to)
+	else:
+		var Splash_Screen: Splashscreen = _Splash_screens.pop_front()
+		Splash_Screen.start()
+		Splash_Screen.connect(\"finished\",_start_splash_screen)
+func _skip() -> void:
+	_Splash_screen_container.get_child(0).queue_free()
+	_start_splash_screen()
+"
+
+[node name="Splash_screen_manager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_k3bkt")
+_move_to = ExtResource("2_m2i7k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.61960787)
+
+[node name="Splashscreencontainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="godot_Splash" parent="Splashscreencontainer" instance=ExtResource("2_k3bkt")]
+layout_mode = 2
+
+[node name="Equipo_Splash" parent="Splashscreencontainer" instance=ExtResource("3_i4a8r")]
+layout_mode = 2
