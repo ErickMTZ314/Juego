@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsp87xnncvdi4"]
+
+[ext_resource type="Texture2D" uid="uid://do0lhe4c0eyuc" path="res://personajes/npc/rey_mejorado.png" id="2_ycl4e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72x6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ycl4e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72x6q"]
+size = Vector2(40, 46)
+
+[node name="king" type="Area2D"]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.039, 0.046)
+sprite_frames = SubResource("SpriteFrames_72x6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_72x6q")

@@ -1,0 +1,180 @@
+[gd_scene load_steps=22 format=3 uid="uid://y3j3s6p2mkyq"]
+
+[ext_resource type="Script" uid="uid://cqbh4xsfbn4je" path="res://menu/inicio/menu.gd" id="1_cxoyd"]
+[ext_resource type="FontFile" uid="uid://bmi7bvb6ljyqk" path="res://botones/antiquity-print.ttf" id="2_kt2nm"]
+[ext_resource type="Texture2D" uid="uid://7xs7yun1v60v" path="res://botones/boton.png" id="3_w0mag"]
+[ext_resource type="Texture2D" uid="uid://dokq61dmg62mc" path="res://botones/Sprite-0003.png" id="4_gtu58"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ouk20"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4hy44"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_w0mag")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kk3ma"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("4_gtu58")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwrpx"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_w0mag")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mae5d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytr4m"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_w0mag")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrnbx"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("4_gtu58")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g7jxm"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_w0mag")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gd0jp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l48gv"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_w0mag")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqepy"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("4_gtu58")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jspdm"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_w0mag")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxnod"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ecwwl"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_w0mag")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h1wq0"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("4_gtu58")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ndjb"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_w0mag")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ls4m"]
+
+[node name="Menu_inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cxoyd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -114.0
+offset_right = 58.5
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ouk20")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 44
+
+[node name="new_game" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kt2nm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4hy44")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kk3ma")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dwrpx")
+theme_override_styles/focus = SubResource("StyleBoxTexture_mae5d")
+text = "Nuevo juego"
+
+[node name="continue" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kt2nm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ytr4m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nrnbx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g7jxm")
+theme_override_styles/focus = SubResource("StyleBoxTexture_gd0jp")
+text = "Continuar"
+
+[node name="options" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kt2nm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l48gv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_iqepy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jspdm")
+theme_override_styles/focus = SubResource("StyleBoxTexture_oxnod")
+text = "Opciones"
+
+[node name="exit" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kt2nm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ecwwl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h1wq0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4ndjb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_3ls4m")
+text = "Salir"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
